@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <h1>Welcome to Blockstagram!</h1>
-      <Feed></Feed> 
+      <Feed></Feed>
     </div>
   );
 }

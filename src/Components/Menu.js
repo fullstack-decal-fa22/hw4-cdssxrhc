@@ -3,27 +3,17 @@ import React, { useState } from 'react';
 import Color from './Color';
 import Block from './Block';
 
-const Menu = () => {
+const Menu = (props) => {
 
-  // Keep track of colors added
-  const [color, setBlockColor] = useState([""]);
-
-  // onClick > handleClick > addBlock > renderBlock
-  function addBlock(color) {
-    setBlockColor([...color, [""]])
-    renderBlock(color);
-  };
-
-  function renderBlock(color) {
-    return <Block color={color} />
-  };
+  // cannot render elements here because the rendering happens from feed
+  // that's why handleclick = {props.addBlock} and addBlock is implemented in the feed instead of here
 
   return (
     <div className="colorOptions">
-      <Color color="red" handleClick={addBlock}></Color>
-      <Color color="pink" handleClick={addBlock}></Color>
-      <Color color="blue" handleClick={addBlock}></Color>
-      <Color color="green" handleClick={addBlock}></Color>
+      <Color color="red" handleclick={props.addBlock}></Color>
+      <Color color="pink" handleclick={props.addBlock}></Color>
+      <Color color="blue" handleclick={props.addBlock}></Color>
+      <Color color="green" handleclick={props.addBlock}></Color>
     </div>
   );
 }

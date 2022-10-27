@@ -23,8 +23,10 @@ export default Color;
 // FUNCTIONAL COMPONENT
 const Color = (props) => {
 
+    // in functional components, there's no this.
+    // so it's just props.color instead of this.props.color
     return (
-        <button onClick={() => this.props.handleClick(this.props.color)}>Post {this.props.color}</button>
+        <button onClick={() => props.handleclick(props.color)}>Post {props.color}</button>
     );
 }
 
